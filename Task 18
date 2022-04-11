@@ -1,0 +1,26 @@
+namespace IJunior_Task18
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Random random = new Random();
+
+            int givenNumber = 2;
+            int degreeNumber = 0;
+            int minRandomNumber = 0;
+            int maxRandomNumber = 101;
+            int randomNumber;
+            int searchNumbers = 1;
+
+            randomNumber = random.Next(minRandomNumber, maxRandomNumber);
+
+            while (searchNumbers <= randomNumber)
+            {
+                searchNumbers *= givenNumber;
+                degreeNumber++;
+            }
+            Console.WriteLine($"Случайное число: {randomNumber}  \n\nДанно число {givenNumber}, в степени {degreeNumber} оно ровняется {searchNumbers} - это минимальное число {givenNumber} в степени {degreeNumber}, превосходящую случайное число.");
+        }
+    }
+}
